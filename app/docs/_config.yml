@@ -1,0 +1,11 @@
+# Disable all Jekyll processing
+theme: null
+exclude:
+  - "*.py"
+  - "*.venv"
+  - "app/"
+  - "data/"
+  - "infra/"
+  - "scripts/"
+  - "requirements.txt"
+  - ".gitignore"

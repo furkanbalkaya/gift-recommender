@@ -20,14 +20,20 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload static files
+      - name: Debug repository structure
+        run: |
+          echo "Listing all files in repo:"
+          ls -R .
+
+      - name: Upload /docs folder if it exists
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: ./docs
 
       - name: Deploy to GitHub Pages
         id: deployment
